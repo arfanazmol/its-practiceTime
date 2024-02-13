@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>bangla gan protijogita </h1> 
+   <div id="content_text">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aliquid consequuntur magni, est nemo reprehenderit repellat quia vel velit amet.</p>
+    <p>Nesciunt explicabo molestiae fugit itaque aspernatur, velit provident ducimus in iusto id dicta et? Commodi at tenetur quas voluptatibus non.</p>
+    <p>Aliquid similique nostrum veniam deserunt ipsum rerum odit numquam obcaecati consequatur quibusdam nisi, veritatis autem quaerat soluta. Molestiae, placeat tempora?</p>
+   </div>
+   <div>
+    <textarea name="" id="new_comment" cols="50" rows="10"></textarea>
+    <br>
+    <br>
+    <button id="btn-create">create</button>  
+</div>
+<script>
+    document.getElementById("btn-create").addEventListener("click", function(){
+        const commentBox = document.getElementById('new_comment');
+        const newComment = commentBox.value;
+        console.log(newComment);  
+
+        //--------------secend step-------------------------
+       const contentText = document.getElementById('content_text');
+       const p = document.createElement('p');
+       p.innerText = newComment;
+       contentText.appendChild(p);
+       commentBox.value = '';
+        
+    })
+
+
+</script>
+</body>
+</html>

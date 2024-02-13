@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Summary</title>
+</head>
+
+<body>
+    <!-- -----------------------option no 1 =>  On Click er khetre---------------------------->
+    <h1>finaql dom event handlers</h1>
+    <h3 id="handler_status">default text</h3>
+    <p id="input_text">default input text:</p>
+    <input id="input_field" type="text">
+    <button id="btn_update">Update</button>
+    <br>
+    <br>
+    <button onclick="handleOnClick()">handle event by add onclick function</button>
+    <button id="even_listener">handle even by addEventListener</button>
+    <script>
+        function handleOnClick() {
+            const handleOnClick = document.getElementById('handler_status');
+            handleOnClick.innerHTML = 'I have been clicked!';
+        }
+
+        //option 2 =>
+        document.getElementById("even_listener").addEventListener("click", function () {
+            const handler_status = document.getElementById('handler_status');
+            handler_status.innerText = 'this is a very nice gay ha ha ha';
+        });
+
+        //option 2 :recap:
+
+        document.getElementById('btn_update').addEventListener('click', function () {
+            const input_field = document.getElementById('input_field');
+            const inputText = input_field
+            .value; //input  এর ভিতরে যদি কোন লেখা থাকে তাহলে সেই লেখা সামনে আনার জন্য আমরা ব্যবহার করে থাকি  .value 
+
+            const p = document.getElementById('input_text');
+            p.innerText = inputText;
+            input_field.value = '';
+
+        })
+    </script>
+    <!-------------------------On Click er khetre---------------------------->
+</body>
+
+</html>
